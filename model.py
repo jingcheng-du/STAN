@@ -113,7 +113,7 @@ class GAT(nn.Module):
         
         for each_step in range(T):        
           iz=h[each_step,:]
-          self.ig.ndata['iz'] = iz.to(device)
+          self.ig.ndata['z'] = iz.to(device)
           cur_h = self.layer1(iz)
           cur_h = F.relu(cur_h)
           cur_h = self.layer2(cur_h)
